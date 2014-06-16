@@ -1,0 +1,17 @@
+<ng-include src='"views/menu.html"'></ng-include>
+<div class='row'>
+	<div class='col-xs-8'>
+		<img class='img-responsive img-thumbnail' ng-src='{{player.avatar_url}}' />
+	</div>
+	<div class='col-xs-4'>
+		<h3>
+			{{player.name}} (from {{player.location}})
+		</h3>
+
+	<iframe frameborder="0" class='player-map'
+  			ng-src="{{player.map_src}}">
+	</iframe>
+
+	</div>
+	<a class="btn btn-primary" href='#/shots'> torna alla lista</a>
+</div>

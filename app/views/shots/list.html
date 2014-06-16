@@ -1,0 +1,20 @@
+<ng-include src='"views/menu.html"'></ng-include>
+
+<select ng-model='listType' ng-change='aggiornaLista()'>
+	<option>everyone</option>
+	<option>popular</option>
+	<option>debuts</option>
+</select>
+<div class='row shot-list'>
+	<div class='col-xs-3 shot-list-element'
+			ng-repeat='shot in shots'
+			ng-click='openShot(shot.id)'>
+		<img ng-src='{{shot.image_teaser_url}}' class='img-responsive img-thumbnail' />
+		<h3>{{shot.title}}</h3>
+		by :
+		<a ng-href='#/players/{{shot.player.id}}'>
+			{{shot.player.username}}
+			<img ng-src='{{shot.player.avatar_url}}' width='16' />
+		</a>
+	</div>
+</div>
